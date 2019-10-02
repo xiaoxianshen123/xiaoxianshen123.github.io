@@ -175,7 +175,18 @@
         <h3 id="arp协议"><a href="#arp协议" class="headerlink" title="arp协议"></a>arp协议</h3><p>1.arp协议数据格式:EthernetII+ARP+FCS</p>
 <p>2.ARP报文不能穿越路由器，不能转发到其他广播域</p>
 <p>3.arp协议通过ip寻找mac地址，并缓存下来，便于数据的封装</p>
-<h3 id="arp协议的抓包"><a href="#arp协议的抓包" class="headerlink" title="arp协议的抓包"></a>arp协议的抓包</h3><p><img src="./self.png" alt="Demo"></p>
+<p>###常见用法</p>
+<ul>
+<li><p>arp -a<br>用于查看缓存中的所有项目。-a和-g参数的结果是一样的，多年来-g一直是UNIX平台上用来显示ARP缓存中所有项目的选项，而Windows用的是arp -a（-a可被视为all，即全部的意思），但它也可以接受比较传统的-g选项。</p>
+<ul>
+<li><p>arp -a ip<br>如果有多个网卡，那么使用arp -a加上接口的IP地址，就可以只显示与该接口相关的ARP缓存项目。</p>
+</li>
+<li><p>arp -s Ip 物理地址<br>可以向ARP缓存中人工输入一个静态项目。该项目在计算机引导过程中将保持有效状态，或者在出现错误时，人工配置的物理地址将自动更新该项目。</p>
+</li>
+</ul>
+<p>*arp -d Ip<br>使用该命令能够人工删除一个静态项目。</p>
+</li>
+</ul>
 
       
 
